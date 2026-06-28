@@ -6,88 +6,91 @@ export default function Gallery() {
 
   const images = [
     {
-      url: 'https://images.unsplash.com/photo-1579847257321-df6210f9bd69?auto=format&fit=crop&w=800&q=80',
+      url: '/images/hero-road.png',
       title: 'Asphalt Highway Paving',
       category: 'Roads',
-      desc: 'Laying fresh asphalt layers for the regional expressway project.'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
-      title: 'Reinforced Concrete Foundation',
-      category: 'Buildings',
-      desc: 'Pouring high-grade concrete over steel rebar mesh for a commercial block.'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
-      title: 'Heavy Trench Excavation',
-      category: 'Machinery',
-      desc: '20-ton crawler excavator digging channels for storm drains.'
+      desc: 'Laying premium asphalt mix for national expressways and regional highway projects.'
     },
     {
       url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-      title: 'Tower Crane Structural Assembly',
+      title: 'Structural Steel Framing',
       category: 'Buildings',
-      desc: 'Lifting pre-fabricated steel trusses onto the industrial complex frame.'
+      desc: 'Lifting precast steel beam structures for large-scale commercial centers.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
-      title: 'Site Alignment & Surveying',
-      category: 'Roads',
-      desc: 'Laser alignment checking for municipal roadway leveling.'
+      url: '/images/machinery.png',
+      title: 'Excavation & Earthmoving',
+      category: 'Machinery',
+      desc: 'Mass soil grading and excavation using high-capacity crawler excavators.'
     },
     {
       url: 'https://images.unsplash.com/photo-1535732820275-9ffd998cac22?auto=format&fit=crop&w=800&q=80',
-      title: 'Subgrade Roll compaction',
+      title: 'Subgrade Compaction',
       category: 'Roads',
-      desc: 'Dual-drum vibratory rollers compacting aggregate base layers.'
+      desc: 'Heavy vibratory road rollers compacting foundation base material.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-      title: 'Glass Façade Installation',
+      url: '/images/hero-building.png',
+      title: 'Apex Business Center',
       category: 'Buildings',
-      desc: 'Installing structural glass frames on the high-rise commercial center.'
+      desc: 'A premium, modern glass-facade commercial skyscraper constructed under our supervision.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
-      title: 'Deep Site Leveling',
+      url: 'https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80',
+      title: 'Trench Digging',
       category: 'Machinery',
-      desc: 'Excavators and dumpers clearing soil to prepare foundations.'
+      desc: 'Digging deep trenches for water pipelines and municipal utility networks.'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80',
+      title: 'Concrete Batching Dispatch',
+      category: 'Machinery',
+      desc: 'Transit concrete mixer trucks preparing for foundation pours on-site.'
     },
     {
       url: 'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?auto=format&fit=crop&w=800&q=80',
-      title: 'Concrete Expressway Lanes',
+      title: 'Expressway Lane Curing',
       category: 'Roads',
-      desc: 'Casting smooth, durable concrete lanes on national highways.'
+      desc: 'Casting concrete slab grids for durable heavy freight highway bypasses.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
-      title: 'Industrial Roofing Assembly',
+      url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      title: 'Logistics Warehouse Frame',
       category: 'Buildings',
-      desc: 'Assembling structural roof frameworks on warehouse structures.'
+      desc: 'Assembling columns and trusses for pre-engineered industrial depots.'
     },
     {
-      url: 'https://images.unsplash.com/photo-1589793907316-f940155486cf?auto=format&fit=crop&w=800&q=80',
-      title: 'Safety Auditing',
-      category: 'Machinery',
-      desc: 'Engineers auditing excavator safety setups before active site deployment.'
+      url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      title: 'Glazing Scaffolding Setup',
+      category: 'Buildings',
+      desc: 'Setting up external scaffolding systems for skyscraper window installations.'
     },
     {
       url: 'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=800&q=80',
-      title: 'Bridge Pier Construction',
+      title: 'Bridge Pier Foundation',
       category: 'Roads',
-      desc: 'Pouring and curing concrete piers for the bypass bridge overpass.'
+      desc: 'Reinforced concrete bridge arches and columns curing for river crossings.'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+      title: 'Site Blueprint Layout',
+      category: 'Machinery',
+      desc: 'Engineers aligning layout blueprints on the grading site beforehand.'
     }
   ];
 
   const [activeFilter, setActiveFilter] = useState('All Work');
   const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
+  const [showAll, setShowAll] = useState(false);
 
   const filteredImages = activeFilter === 'All Work'
     ? images
     : images.filter(img => img.category === activeFilter);
 
+  // Show only 2 rows (8 images) initially on 4-column layout
+  const visibleImages = showAll ? filteredImages : filteredImages.slice(0, 8);
+
   const openLightbox = (idx) => {
-    // Find absolute index in the filtered list
     setLightbox({ isOpen: true, index: idx });
   };
 
@@ -130,7 +133,10 @@ export default function Gallery() {
             {categories.map((filter) => (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setShowAll(false); // Reset show more when filter changes
+                }}
                 className={`px-4.5 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                   activeFilter === filter
                     ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/10'
@@ -145,7 +151,7 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredImages.map((image, idx) => (
+          {visibleImages.map((image, idx) => (
             <div
               key={idx}
               onClick={() => openLightbox(idx)}
@@ -180,6 +186,18 @@ export default function Gallery() {
             </div>
           ))}
         </div>
+
+        {/* Read More Button */}
+        {filteredImages.length > 8 && (
+          <div className="flex justify-center mt-12 animate-fade-in-up">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all shadow-md shadow-amber-500/10 hover:shadow-amber-500/20 hover:-translate-y-0.5 cursor-pointer"
+            >
+              {showAll ? 'Show Less' : 'Read More'}
+            </button>
+          </div>
+        )}
 
       </div>
 
