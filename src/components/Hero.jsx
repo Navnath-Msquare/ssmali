@@ -95,6 +95,16 @@ export default function Hero() {
                     Explore Projects
                   </a>
                 </div>
+
+                {/* Mobile-Only Quick Stats Grid */}
+                <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-800/60 sm:hidden">
+                  {stats.map((stat, sindex) => (
+                    <div key={sindex}>
+                      <p className="font-display font-extrabold text-lg text-amber-500">{stat.value}</p>
+                      <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
